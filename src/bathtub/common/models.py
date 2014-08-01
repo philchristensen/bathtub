@@ -40,8 +40,17 @@ class Set(models.Model):
 class Song(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
+
     is_cover = models.BooleanField(default=False)
     original_artist = models.ForeignKey(Artist, blank=True, null=True)
+    
+    def __unicode__(self):
+        return self.date
+
+class SetlistEntry(models.Model):
+    set = models.ForeignKey(Set, related_name='entries')
+    index = models.IntegerField()
+    is_encore = models.BooleanField(default=False)
     
     def __unicode__(self):
         return self.date
