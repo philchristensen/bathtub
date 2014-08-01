@@ -163,6 +163,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'mptt',
     'south',
+    'django_extensions',
     'sekizai',
     'easy_thumbnails',
     'filer',
