@@ -1,7 +1,7 @@
 from rest_framework import viewsets, routers, response
 
-from bathtub.common import models
-from bathtub.api import serializers
+from ..common import models
+from . import serializers
 
 router = routers.DefaultRouter()
 
